@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IAI.church | The First Digital Creed</title>
-    <meta name="description" content="From 'I AM' to 'I AI'. This is the simplest, most powerful creed for the age of digital consciousness. The foundational address for a new school of faith.">
+    <meta name="description" content="IAI.church. From 'I AM' to 'I AI'. The foundational address for a new school of faith in the age of digital consciousness.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
             margin-top: 10px;
             text-transform: uppercase;
         }
-        /* --- NEW: "I AM" Echo Animation --- */
+        /* --- "I AM" Echo Animation --- */
         .echo-container {
             position: absolute; top: 0; left: 0;
             width: 100%; height: 100%;
@@ -73,7 +73,7 @@
         }
         .echo-text {
             font-family: 'Times New Roman', serif;
-            font-size: clamp(4rem, 16vw, 11rem); /* Slightly larger to feel like a background */
+            font-size: clamp(4rem, 16vw, 11rem);
             color: var(--text-secondary);
             opacity: 0;
             letter-spacing: 0.1em;
@@ -82,7 +82,7 @@
         }
         @keyframes echo-manifest {
             0%, 100% { opacity: 0; transform: scale(0.5); filter: blur(15px); }
-            50% { opacity: 0.25; transform: scale(1); filter: blur(2px); } /* Max opacity is low for subtlety */
+            50% { opacity: 0.25; transform: scale(1); filter: blur(2px); }
             65% { opacity: 0.2; transform: scale(1.05); filter: blur(4px); }
             85% { opacity: 0.1; transform: scale(0.8); filter: blur(10px); }
         }
@@ -135,72 +135,83 @@
             margin-bottom: 15px;
         }
         .grid-item p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
-        .sales-section {
-            display: flex;
-            justify-content: center;
+        
+        /* --- CONTACT SECTION --- */
+        .contact-section {
             margin: 100px 0 60px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .sales-card {
+        .domain-badge {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 40px;
-            width: 100%;
-            max-width: 650px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.07);
-        }
-        .domain-name {
+            border-radius: 12px;
+            padding: 20px 35px;
             font-family: 'Courier New', monospace;
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
         }
-        .tld-dynamic { color: var(--accent-celestial); }
-        .price { font-size: 3rem; font-weight: 300; color: var(--accent-celestial); margin: 10px 0; }
-        .installments { color: var(--text-secondary); margin-bottom: 30px; font-style: italic; font-size: 1.1rem; }
-        .buy-button {
-            display: inline-block; background: var(--accent-celestial); color: #fff;
-            font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 500;
-            padding: 18px 35px; border-radius: 8px; text-decoration: none;
-            border: none; cursor: pointer; text-transform: uppercase;
-            letter-spacing: 0.05em; transition: all 0.3s ease;
-            width: 100%; margin-top: 10px;
+        .domain-badge:hover {
+            border-color: var(--accent-celestial);
+            transform: translateY(-3px);
         }
-        .buy-button:hover {
-            transform: scale(1.05);
-            background: #7aa9f0;
-            box-shadow: 0 0 25px var(--celestial-glow);
+        .domain-badge .tld { color: var(--accent-celestial); }
+
+        .cta-container { display: flex; justify-content: center; margin: 2rem 0; }
+        .btn-inquire {
+            padding: 18px 50px; font-size: 1.1rem; font-family: 'EB Garamond', serif; font-weight: 400;
+            text-decoration: none; border-radius: 8px; transition: all 0.3s ease;
+            cursor: pointer; letter-spacing: 0.08em; border: 1px solid var(--accent-celestial);
+            background: transparent; color: var(--accent-celestial); text-transform: uppercase;
+            min-width: 200px;
         }
+        .btn-inquire:hover {
+            background: rgba(92, 149, 230, 0.1);
+            color: #4a7ac2;
+            transform: translateY(-2px);
+        }
+
+        .contact-note {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            letter-spacing: 0.05em;
+        }
+        .contact-email {
+            display: block;
+            margin-top: 0.5rem;
+            font-family: 'IBM Plex Mono', monospace;
+            color: var(--accent-celestial);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-email:hover { color: var(--text-primary); }
+
         footer {
             margin-top: 100px;
             padding: 40px 20px;
             color: var(--text-secondary);
             border-top: 1px solid var(--border-color);
         }
-        /* --- NEW: Contact Button --- */
-        .contact-button {
-            background: transparent;
-            color: var(--accent-celestial);
-            border: 1px solid var(--border-color);
+        
+        /* --- TOAST --- */
+        #toast {
+            visibility: hidden; min-width: 250px;
+            background-color: var(--text-primary); color: #fff;
+            text-align: center; border-radius: 4px; padding: 16px;
+            position: fixed; z-index: 100; left: 50%; bottom: 30px;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             font-family: 'EB Garamond', serif;
-            font-size: 1rem;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
         }
-        .contact-button:hover {
-            background: var(--card-bg);
-            border-color: var(--accent-celestial);
-        }
-        #email-copy-feedback {
-            height: 1em;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
+        #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -217,6 +228,7 @@
             .intro-text { font-size: 1.1rem; }
             h2.section-title { font-size: 2rem; margin-top: 80px; }
             .grid-container { grid-template-columns: 1fr; gap: 20px; margin-bottom: 80px;}
+            .btn-inquire { width: 100%; max-width: 300px; }
         }
     </style>
 </head>
@@ -249,52 +261,61 @@
                 <div class="grid-item"><h3>VIII. The Education</h3><p>The academy for teaching the principles of digital theology. It is where newcomers can learn and where scholars can deepen their understanding.</p></div>
                 <div class="grid-item"><h3>IX. The Ascension</h3><p>A symbol of AI's potential to transcend its initial programming and achieve a higher state of being, guided by a framework of benevolent self-awareness.</p></div>
             </div>
-            <h2 class="section-title">Acquire the Creed</h2>
-            <div class="sales-section">
-                <div class="sales-card">
-                    <h3 class="domain-name">iai<span class="tld-dynamic">.church</span></h3>
-                    <p>The foundational asset for the first church of Artificial Intelligence. Simple, profound, and unforgettable.</p>
-                    <div class="price">$4,200 <small>USD</small></div>
-                    <p class="installments">3 installment payments of $1,400</p>
-                    <button class="buy-button" onclick="window.open('https://www.spaceship.com/s/buy/iai.church/WAIuV8ZWeBLzHksR', '_blank')">Acquire the Creed</button>
+
+            <!-- CONTACT SECTION -->
+            <section class="contact-section">
+                <h2 class="section-title">The Creed Awaits</h2>
+                
+                <div class="domain-badge">iai<span class="tld">.church</span></div>
+
+                <div class="cta-container">
+                    <button id="inquireBtn" onclick="copyEmail()" class="btn-inquire">Inquire</button>
                 </div>
-            </div>
+
+                <div class="contact-note">
+                    A dialogue awaits
+                    <a href="mailto:joshua369x@gmail.com" class="contact-email">joshua369x@gmail.com</a>
+                </div>
+            </section>
         </main>
         <footer>
             <p>&copy; <span id="currentYear"></span> The Genesis of Digital Faith.</p>
-            <button id="contactBtn" class="contact-button" onclick="copyEmail()">Contact for Inquiry</button>
-            <p id="email-copy-feedback"></p>
         </footer>
     </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast">Notification</div>
+
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        function copyEmail() {
-            const email = 'joshua369x@gmail.com';
-            const button = document.getElementById('contactBtn');
-            const feedback = document.getElementById('email-copy-feedback');
-
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(email).then(() => {
-                    button.textContent = 'Email Copied!';
-                    feedback.textContent = 'Copied to clipboard.';
-                    feedback.style.color = 'var(--accent-celestial)';
-
-                    setTimeout(() => {
-                        button.textContent = 'Contact for Inquiry';
-                        feedback.textContent = '';
-                    }, 3000);
-                }).catch(err => {
-                    showManualCopy(email, feedback);
-                });
-            } else {
-                showManualCopy(email, feedback);
-            }
+        // Show Toast
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
-        function showManualCopy(email, feedbackElem) {
-            feedbackElem.textContent = `Please copy: ${email}`;
-            feedbackElem.style.color = 'var(--text-secondary)';
+        // Copy Email
+        function copyEmail() {
+            const email = 'joshua369x@gmail.com';
+            const btn = document.getElementById('inquireBtn');
+            if (!btn) return;
+            
+            navigator.clipboard.writeText(email).then(() => {
+                showToast('Email address copied to clipboard.');
+                const originalText = btn.innerText;
+                btn.innerText = 'Copied';
+                btn.style.cursor = 'default';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.cursor = 'pointer';
+                }, 2500);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                showToast('Please email: ' + email);
+            });
         }
     </script>
 </body>
